@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    int arr[n];
+    for(int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    int start = 0;
+    int end = n - 1;
+    int mid;
+    int key;
+    cin >> key;
+
+    while(start <= end) {
+        mid = (start + end) / 2;
+
+        if(arr[mid] == key) {
+            cout << "Index of " << key << " is: " << mid << endl;
+            return 0;          }
+
+        if(key > arr[mid]) {
+            start = mid + 1;
+        } else {
+            end = mid - 1;
+        }
+    }
+
+        cout << "Key " << key << " not found in the array." << endl;
+    return 0;
+}
